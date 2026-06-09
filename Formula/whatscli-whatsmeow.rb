@@ -1,22 +1,20 @@
-class Whatscli < Formula
-  desc "Command-line interface for WhatsApp"
-  homepage "https://github.com/normen/whatscli"
-  url "https://github.com/normen/whatscli/archive/v1.1.5.tar.gz"
-  sha256 "a07be596b0c452b48cab39fc6de2a3a179e6e0a8ed20e036c838da050a0a507f"
+class WhatscliWhatsmeow < Formula
+  desc "Command-line interface for WhatsApp (whatsmeow branch)"
+  homepage "https://github.com/normen/whatscli/tree/whatsmeow"
   license "MIT"
 
   head do
-    url "https://github.com/normen/whatscli.git", branch: "master"
+    url "https://github.com/normen/whatscli.git", branch: "whatsmeow"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(output: bin/"whatsmeow")
   end
 
   test do
-    #system "#{bin}/whatscli"
+    #system "#{bin}/whatsmeow"
     # `test do` will create, run in and delete a temporary directory.
     #
     # This test will fail and we won't accept that! For Homebrew/homebrew-core
